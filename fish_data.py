@@ -1,4 +1,4 @@
-[
+FISH = [
   {
     "id": 0,
     "name": "Clownfish",
