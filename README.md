@@ -1,6 +1,6 @@
 # FishVault API
 
-This is the backend API for the **FishVault** android application, for the course *Mobile Security*. It server the fish catalogue and images used in the Android clinet.
+This is the backend API for the **FishVault** android application, for the course *Mobile Security*. It server the fish catalogue and images used in the Android client.
 
 ## Project structure
 
@@ -29,7 +29,7 @@ fishvault-api/
 
 ### IDOR
 
-This API can be used with IDOR (for the project) but there is not sensitive data hidden here
+This API can be used with IDOR (for the project) but there is not sensitive data hidden here.
 
 ### Path Traversal
 
