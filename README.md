@@ -25,7 +25,7 @@ fishvault-api/
 | GET    | `/assets/<file>`    | A fish image                      |
 ```
 
-## Vulnerabilitis
+## Vulnerabilities
 
 ### IDOR
 
