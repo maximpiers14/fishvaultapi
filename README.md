@@ -34,3 +34,7 @@ This API can be used with IDOR (for the project) but there is not sensitive data
 ### Path Traversal
 
 The image part of this API is not vulnerable to path traversal.
+
+## Deployement
+
+This API has been deployed on render (https://fishvaultapi.onrender.com).
