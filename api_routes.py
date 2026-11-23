@@ -17,6 +17,11 @@ def health():
 
 @api.route("fish")
 def get_fish():
-    return jsonify(FISH)
+    return jsonify(FISH), 200
 
-
+@api.route("fish/<int:fish_id>")
+def get_fish_by_id(fish_id):
+    fish = next((f for f in FISH if f["id"] == fish_id), None)
+    if fish is None:
+        return jsonify({"error": "Fish not found"}), 404
+    return jsonify(fish), 200
