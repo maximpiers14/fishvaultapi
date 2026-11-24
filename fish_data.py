@@ -100,7 +100,7 @@ ALL_FISH = [
   },
   # here we add an extra one, that can be reached with IDOR
   {
-      "id": -1,
+      "id": 67,
       "name": "KoenkFish",
       "imageFile": "none",
       "description": "A fish that does not answer his emails",
