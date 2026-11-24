@@ -48,3 +48,64 @@ FISH = [
     "price": 6.95
   }
 ]
+
+ALL_FISH = [
+  {
+    "id": 0,
+    "name": "Clownfish",
+    "imageFile": "https://fishvaultapi.onrender.com/assets/clownfish.png",
+    "description": "A bright orange-and-white reef fish that shelters among sea anemones. Hardy and full of personality.",
+    "size": 11,
+    "price": 24.99
+  },
+  {
+    "id": 1,
+    "name": "Blue Tang",
+    "imageFile": "https://fishvaultapi.onrender.com/assets/bluetang.png",
+    "description": "A vivid royal-blue saltwater fish with a yellow tail. An active swimmer that needs plenty of space.",
+    "size": 30,
+    "price": 59.95
+  },
+  {
+    "id": 2,
+    "name": "Betta",
+    "imageFile": "https://fishvaultapi.onrender.com/assets/betta.png",
+    "description": "The Siamese fighting fish, famous for flowing fins and intense colours. Males must be kept alone.",
+    "size": 7,
+    "price": 12.50
+  },
+  {
+    "id": 3,
+    "name": "Guppy",
+    "imageFile": "https://fishvaultapi.onrender.com/assets/guppy.png",
+    "description": "A small, colourful livebearer that is perfect for beginners and breeds very easily.",
+    "size": 5,
+    "price": 3.99
+  },
+  {
+    "id": 4,
+    "name": "Neon Tetra",
+    "imageFile": "https://fishvaultapi.onrender.com/assets/neontetra.png",
+    "description": "A tiny schooling fish with a glowing blue-and-red stripe. Best kept in groups of six or more.",
+    "size": 4,
+    "price": 2.49
+  },
+  {
+    "id": 5,
+    "name": "Goldfish",
+    "imageFile": "https://fishvaultapi.onrender.com/assets/goldfish.png",
+    "description": "The classic pond and aquarium fish. Hardy, long-lived and surprisingly intelligent.",
+    "size": 20,
+    "price": 6.95
+  },
+  # here we add an extra one, that can be reached with IDOR
+  {
+      "id": -1,
+      "name": "KoenkFish",
+      "imageFile": "none",
+      "description": "A fish that does not answer his emails",
+      "size": 2,
+      "price": 1
+    }
+
+]
