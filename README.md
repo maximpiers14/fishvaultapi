@@ -29,7 +29,12 @@ fishvault-api/
 
 ### IDOR
 
-This API can be used with IDOR (for the project) but there is not sensitive data hidden here.
+There is an intentional IDOR, where you can find a fish with ID 6, that is not listed in all fish.
+```
+| Method | Endpoint            | Description                       |
+|--------|---------------------|-----------------------------------|
+| GET    | `/api/fish/67`      | KoenKFish                         |
+```
 
 ### Path Traversal
 

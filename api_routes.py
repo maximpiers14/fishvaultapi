@@ -1,5 +1,7 @@
 from flask import Blueprint, jsonify
-from fish_data import FISH, ALL_FISH
+from fish_data import FISH, HIDDEN_FISH
+
+ALL_FISH = FISH + HIDDEN_FISH # intentional IDOR
 
 api = Blueprint("api", __name__, url_prefix="/api")
 
