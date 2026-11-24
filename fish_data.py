@@ -107,5 +107,4 @@ ALL_FISH = [
       "size": 2,
       "price": 1
     }
-
 ]

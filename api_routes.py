@@ -1,5 +1,5 @@
 from flask import Blueprint, jsonify
-from fish_data import FISH
+from fish_data import FISH, ALL_FISH
 
 api = Blueprint("api", __name__, url_prefix="/api")
 
@@ -21,7 +21,7 @@ def get_fish():
 
 @api.route("fish/<int:fish_id>")
 def get_fish_by_id(fish_id):
-    fish = next((f for f in FISH if f["id"] == fish_id), None)
+    fish = next((f for f in ALL_FISH if f["id"] == fish_id), None)
     if fish is None:
         return jsonify({"error": "Fish not found"}), 404
     return jsonify(fish), 200

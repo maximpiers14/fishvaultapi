@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FishVault API</title>
+    <style>
+        :root {
+            --bg: #eef6fb;
+            --surface: #ffffff;
+            --surface-2: #f3f8fc;
+            --text: #0f2a3b;
+            --muted: #4a6678;
+            --border: #d4e4ef;
+            --accent: #0a84c4;
+            --accent-deep: #065a86;
+            --warn-bg: #fff6e6;
+            --warn-border: #f0c678;
+            --warn-text: #7a4e00;
+            --get: #0a84c4;
+            --shadow: 0 10px 30px rgba(10, 60, 90, 0.10);
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root:not([data-theme="light"]) {
+                --bg: #071722;
+                --surface: #0e2433;
+                --surface-2: #112c3e;
+                --text: #e6f2fa;
+                --muted: #9fbccf;
+                --border: #1d3a4d;
+                --accent: #38b6f0;
+                --accent-deep: #8fd6f7;
+                --warn-bg: #2e2410;
+                --warn-border: #6b5316;
+                --warn-text: #f0cf8a;
+                --shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+            }
+        }
+
+        :root[data-theme="dark"] {
+            --bg: #071722;
+            --surface: #0e2433;
+            --surface-2: #112c3e;
+            --text: #e6f2fa;
+            --muted: #9fbccf;
+            --border: #1d3a4d;
+            --accent: #38b6f0;
+            --accent-deep: #8fd6f7;
+            --warn-bg: #2e2410;
+            --warn-border: #6b5316;
+            --warn-text: #f0cf8a;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            background:
+                radial-gradient(1200px 500px at 50% -10%, rgba(10, 132, 196, 0.18), transparent 60%),
+                var(--bg);
+            color: var(--text);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            padding: 16px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        .wrap {
+            width: 100%;
+            max-width: 720px;
+            margin: 48px 0;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 32px;
+        }
+
+        .logo {
+            font-size: 56px;
+            line-height: 1;
+            margin-bottom: 8px;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2.1rem;
+            letter-spacing: -0.02em;
+            background: linear-gradient(90deg, var(--accent), var(--accent-deep));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .tagline {
+            margin: 6px 0 0;
+            color: var(--muted);
+            font-size: 1.05rem;
+        }
+
+        .card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 24px;
+            box-shadow: var(--shadow);
+            margin-bottom: 20px;
+        }
+
+        .notice {
+            background: var(--warn-bg);
+            border: 1px solid var(--warn-border);
+            color: var(--warn-text);
+            border-radius: 14px;
+            padding: 16px 18px;
+            margin-bottom: 20px;
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+            font-size: 0.95rem;
+        }
+
+        .notice .icon { font-size: 1.3rem; line-height: 1.4; }
+
+        h2 {
+            margin: 0 0 16px;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--muted);
+        }
+
+        .endpoint {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 14px 0;
+            border-top: 1px solid var(--border);
+        }
+
+        .endpoint:first-of-type { border-top: none; }
+
+        .method {
+            flex-shrink: 0;
+            font-weight: 700;
+            font-size: 0.72rem;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 999px;
+            background: color-mix(in srgb, var(--get) 16%, transparent);
+            color: var(--get);
+            border: 1px solid color-mix(in srgb, var(--get) 35%, transparent);
+        }
+
+        .path {
+            font-family: "SF Mono", "Cascadia Code", Consolas, "Courier New", monospace;
+            font-size: 0.95rem;
+            color: var(--text);
+            word-break: break-all;
+        }
+
+        .desc {
+            margin-left: auto;
+            color: var(--muted);
+            font-size: 0.88rem;
+            text-align: right;
+            flex-shrink: 0;
+        }
+
+        footer {
+            text-align: center;
+            color: var(--muted);
+            font-size: 0.85rem;
+            margin-top: 8px;
+        }
+
+        @media (max-width: 560px) {
+            .endpoint { flex-wrap: wrap; }
+            .desc { margin-left: 0; text-align: left; width: 100%; }
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <header>
+            <div class="logo">🐟</div>
+            <h1>FishVault API</h1>
+            <p class="tagline">A demo REST API serving the FishVault Android app</p>
+        </header>
+
+        <div class="notice">
+            <span class="icon">⚠️</span>
+            <span>
+                This API was built for the <strong>Mobile Security</strong> course
+                (Howest &mdash; Group 12). It contains <strong>intentional
+                vulnerabilities</strong> used only for an authorized security
+                assessment. It is <strong>not</strong> a production service and
+                stores no real or personal data.
+            </span>
+        </div>
+
+        <div class="card">
+            <h2>Available endpoints</h2>
+
+            <div class="endpoint">
+                <span class="method">GET</span>
+                <span class="path">/api/fish</span>
+                <span class="desc">Full fish catalogue</span>
+            </div>
+            <div class="endpoint">
+                <span class="method">GET</span>
+                <span class="path">/api/fish/&lt;id&gt;</span>
+                <span class="desc">One fish by id</span>
+            </div>
+            <div class="endpoint">
+                <span class="method">GET</span>
+                <span class="path">/api/health</span>
+                <span class="desc">Service health check</span>
+            </div>
+            <div class="endpoint">
+                <span class="method">GET</span>
+                <span class="path">/assets/&lt;file&gt;</span>
+                <span class="desc">Fish images</span>
+            </div>
+        </div>
+
+        <footer>
+            Howest &middot; Applied Computer Science &middot; Mobile Security &middot; Group 12
+        </footer>
+    </div>
+</body>
+</html>
